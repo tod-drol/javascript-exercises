@@ -1,16 +1,35 @@
 const sumAll = function (start, end) {
-  // create a loop that iterates from the start to the end and each iteration adds to result
+  /* 
+   create a loop that iterates from the start to the end and each iteration adds to result even if
+   the starting number is higher than the ending number
+  */
   let sum = 0;
-  if (start < end) {
+  //   checks for integers, typeof number is valid and that start is more than end
+  if (
+    start < end &&
+    start >= 0 &&
+    start % 1 === 0 &&
+    end % 1 === 0 &&
+    typeof start === "number" &&
+    typeof end === "number"
+  ) {
     for (let i = start; i <= end; i++) {
       sum += i;
     }
-  } else if (start > end) {
+    //   checks for integers, typeof number is valid and that start is less than end
+  } else if (
+    start > end &&
+    start >= 0 &&
+    start % 1 === 0 &&
+    end % 1 === 0 &&
+    typeof start === "number" &&
+    typeof end === "number"
+  ) {
     for (let i = start; i >= end; i--) {
       sum += i;
     }
   } else {
-    return sum = "ERROR";
+    return "ERROR";
   }
   return sum;
 };
